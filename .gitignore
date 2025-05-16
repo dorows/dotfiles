@@ -1,0 +1,40 @@
+# ================
+# General
+# ================
+*.swp          # Vim swap files
+*.un~          # Vim undo files
+*~             # Backup files
+.DS_Store      # macOS metadata
+Thumbs.db      # Windows cache
+
+# ================
+# Sensitive Data
+# ================
+*.key
+*.pem
+*.env
+secrets/
+ssh/
+gnupg/
+
+# ================
+# Cache & Logs
+# ================
+.cache/
+.config/dconf/
+.config/pulse/
+.local/share/
+Trash/
+
+# ================
+# App-Specific
+# ================
+# Browser profiles
+.config/chromium/
+.config/google-chrome/
+.config/BraveSoftware/
+
+# Media/App caches
+.cache/spotify/
+.config/Spotify/
+.config/steam/
