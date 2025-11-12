@@ -1,0 +1,60 @@
+[env]
+TERM = "xterm-256color"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font" }
+bold   = { family = "JetBrainsMono Nerd Font" }
+italic = { family = "JetBrainsMono Nerd Font" }
+size   = 12
+
+[window]
+padding.x   = 14
+padding.y   = 14
+decorations = "None"
+
+[colors]
+
+[colors.normal]
+black   = "#333333"
+red     = "#D35F5F"
+green   = "#FFC107"
+yellow  = "#b91c1c"
+blue    = "#e68e0d"
+magenta = "#D35F5F"
+cyan    = "#bebebe"
+white   = "#bebebe"
+
+[colors.bright]
+black   = "#8a8a8d"
+red     = "#B91C1C"
+green   = "#FFC107"
+yellow  = "#b90a0a"
+blue    = "#f59e0b"
+magenta = "#B91C1C"
+cyan    = "#eaeaea"
+white   = "#ffffff"
+
+[colors.cursor]
+cursor = "#c3b7b8"
+text   = "#2c2525"
+
+[colors.primary]
+background     = "#000000"
+foreground     = "#e6d9db"
+dim_foreground = "#8a8a8d"
+
+[colors.selection]
+background = "#403e41"
+text       = "#e6d9db"
+
+[colors.vi_mode_cursor]
+text   = "#121212"
+cursor = "#eaeaea"
+
+[keyboard]
+bindings = [
+  { key = "F11", action = "ToggleFullscreen" },
+  { key = "Insert", mods = "Shift", action = "Paste" },
+  { key = "Insert", mods = "Control", action = "Copy" },
+  { key = "Back", mods = "Control", chars = "\u0017" } # Ctrl+Backspace = ^W
+]
