@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+profile="UFSC IKEv2"
+gateway="vpn.ufsc.br"
+
+read -rp "IdUFSC username: " username
+if [[ -z "$username" ]]; then
+  printf 'Username cannot be empty.\n' >&2
+  exit 1
+fi
+
+vpn_data="address=${gateway},encap=no,esp=aes128gcm16,ipcomp=no,method=eap,password-flags=0,proposal=no,user=${username},virtual=yes"
+
+if ! nmcli -t -f NAME connection show | grep -Fqx "$profile"; then
+  nmcli connection add \
+    type vpn \
+    vpn-type strongswan \
+    con-name "$profile" \
+    ifname --
+fi
+
+read -rsp "IdUFSC password: " password
+printf '\n'
+
+if [[ -z "$password" ]]; then
+  printf 'Password cannot be empty.\n' >&2
+  exit 1
+fi
+
+nmcli connection modify "$profile" \
+  connection.permissions "user:${USER}" \
+  vpn.data "$vpn_data" \
+  vpn.secrets "password=${password}"
+
+unset password
+nmcli connection up "$profile"
