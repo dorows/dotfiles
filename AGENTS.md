@@ -5,3 +5,5 @@ Share code inside source folder when the feature is big, when it's small snippet
 The name of the feature's file needs to be indistinguishable and clear.
 
 When prompted to commit and push do not add a Co-author by codex anywhere.
+
+This is a public repo, do not add sensitive information.
