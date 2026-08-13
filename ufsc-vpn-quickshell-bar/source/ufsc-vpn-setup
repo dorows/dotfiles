@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Creates or updates the NetworkManager profile used by the bar widget.
+
 set -euo pipefail
 
 profile="UFSC IKEv2"
